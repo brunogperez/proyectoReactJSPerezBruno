@@ -5,10 +5,8 @@ import ItemListContainer from '../src/components/ItemListContainer/ItemListConta
 function App() {
   return (
     <div className="App">
-      <>
       <NavBar />
-      <ItemListContainer />
-      </>
+      <ItemListContainer texto='producto para alquilar' />
     </div>
   );
 }

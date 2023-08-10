@@ -1,10 +1,13 @@
 import React from "react";
-import Item from '../Item/Item';
 
-export const ItemListContainer = () => {
-    return(
-
-        <Item greeting = 'Producto para alquilar' />
+export const ItemListContainer = (props) => {
+    return (
+        <div>
+            <h1>Lista de productos</h1>
+            <p>{props.texto}</p>
+            <p>{props.texto}</p>
+            <p>{props.texto}</p>
+        </div>
     )
 }
 
