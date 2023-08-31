@@ -1,14 +1,10 @@
 import './App.css';
-import NavBar from '../src/components/NavBar/NavBar';
-import ItemListContainer from '../src/components/ItemListContainer/ItemListContainer';
+import Router from './Router/Router';
+
 
 function App() {
-  return (
-    <div className="App">
-      <NavBar />
-      <ItemListContainer texto='producto para alquilar' />
-    </div>
-  );
+  return <Router />
 }
 
 export default App;
+

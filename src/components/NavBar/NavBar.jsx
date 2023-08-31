@@ -1,33 +1,42 @@
-import React from "react";
-import CartWidget from "../CartWidget/CartWidget";
-import logo from "./logoByC.svg";
+import React from "react"
+import CartWidget from "../CartWidget/CartWidget"
+import logo from "./logoByC.svg"
 import './styles.css'
+import { Link } from 'react-router-dom'
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
+import NavDropdown from 'react-bootstrap/NavDropdown'
 
-export const NavBar = () => {
+export function NavBar() {
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
-            <div className="container-fluid">
-                <a className="navbar-brand" href="#">
+        <Navbar expand="lg" className="bg-body-tertiary">
+            <Container>
+                <Navbar.Brand as={Link} to='/'>
                     <img className="logo" src={logo} alt="Logo empresa" />
-                </a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav justify-content-end">
-                        <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Empresa</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link active" href="#">Productos</a>
-                        </li>
-
-                        <li className="nav-item"> <CartWidget /> </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <NavDropdown title="Categorías" id="basic-nav-dropdown">
+                            <NavDropdown.Item as={Link} to='categoria/Maquinaria Pesada'>Maquinaria Pesada</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='categoria/Herramienta de construcción'>Herramienta de construcción</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='categoria/Equipo de soldadura'>Equipo de soldadura</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='categoria/Equipo de energía'>Equipo de energía</NavDropdown.Item>
+                        </NavDropdown>
+                        <CartWidget />
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar >
     );
 }
 
 export default NavBar;
+
+
+
+/* <div className="App">
+    <NavBar />
+    {cargando ? (<p>CARGANDO PRODUCTOS...</p>) : <ItemListContainer texto='producto para alquilar' />}
+    </div> */
