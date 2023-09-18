@@ -18,7 +18,7 @@ import maquina17 from '../assets/img/maquina17.webp'
 import maquina18 from '../assets/img/maquina18.webp'
 import maquina19 from '../assets/img/maquina19.webp'
 
-export default [
+export const imagenes = [
     maquina1,
     maquina2,
     maquina3,
@@ -39,3 +39,5 @@ export default [
     maquina18,
     maquina19,
 ]
+
+export default imagenes;

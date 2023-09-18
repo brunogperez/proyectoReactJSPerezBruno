@@ -1,29 +1,27 @@
 import React from "react"
 import CartWidget from "../CartWidget/CartWidget"
 import logo from "./logoByC.svg"
-import './styles.css'
+import './NavBar.css'
 import { Link } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-import NavDropdown from 'react-bootstrap/NavDropdown'
 
-export function NavBar() {
+
+export const NavBar = () => {
     return (
-        <Navbar expand="lg" className="bg-body-tertiary">
+        <Navbar expand="lg" className="navBar">
             <Container>
-                <Navbar.Brand as={Link} to='/'>
+                <Navbar.Brand as={Link} to='/' className="col-lg-3">
                     <img className="logo" src={logo} alt="Logo empresa" />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <NavDropdown title="Categorías" id="basic-nav-dropdown">
-                            <NavDropdown.Item as={Link} to='categoria/Maquinaria Pesada'>Maquinaria Pesada</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to='categoria/Herramienta de construcción'>Herramienta de construcción</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to='categoria/Equipo de soldadura'>Equipo de soldadura</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to='categoria/Equipo de energía'>Equipo de energía</NavDropdown.Item>
-                        </NavDropdown>
+                    <Nav >
+                        <Nav.Link as={Link} to='categoria/Maquinaria Pesada' className="navNav">Maquinaria Pesada</Nav.Link>
+                        <Nav.Link as={Link} to='categoria/Herramienta de construcción' className="navNav">Herramienta de construcción</Nav.Link>
+                        <Nav.Link as={Link} to='categoria/Equipo de soldadura' className="navNav">Equipo de soldadura</Nav.Link>
+                        <Nav.Link as={Link} to='categoria/Equipo de energía' className="navNav">Equipo de energía</Nav.Link>
                         <CartWidget />
                     </Nav>
                 </Navbar.Collapse>
@@ -35,8 +33,3 @@ export function NavBar() {
 export default NavBar;
 
 
-
-/* <div className="App">
-    <NavBar />
-    {cargando ? (<p>CARGANDO PRODUCTOS...</p>) : <ItemListContainer texto='producto para alquilar' />}
-    </div> */

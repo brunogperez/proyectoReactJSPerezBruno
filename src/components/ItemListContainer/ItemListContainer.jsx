@@ -1,40 +1,69 @@
-import React, { useState, useEffect } from 'react'
-import ItemList from '../ItemList/Itemlist'
-import { useParams } from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
+import ItemList from "../ItemList/Itemlist";
+import { useParams } from "react-router-dom";
+import "./ItemListContainer.css";
+import Spinner from "react-bootstrap/Spinner";
 
 export const ItemListContainer = () => {
-
-  const { id } = useParams()
-  const [products, setProducts] = useState([])
-  const [data, setData] = useState([])
-  /*   const [loading, setLoading] = useState(true); */
-
-  const getProducts = async () => {
-    const response = await fetch('https://api.npoint.io/0d2ea9d7fce653016963')
-    const data = await response.json()
-    setData(data)
-    setProducts(data)
-    
-  }
+  const { id } = useParams();
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      /*setLoading(true); */
-      getProducts()
-    }, 2000);
+    const querydb = getFirestore();
+    const queryCollection = collection(querydb, "products");
+    if (id) {
+      const queryFilter = query(queryCollection, where("category", "==", id));
+      getDocs(queryFilter).then((res) =>
+        setData(
+          res.docs.map((product) => ({ id: product.id, ...product.data() }))
+        )
+      );
+    } else {
+      getDocs(queryCollection).then((res) =>
+        setData(
+          res.docs.map((product) => ({ id: product.id, ...product.data() }))
+        )
+      );
+    }
+  }, [id]);
 
+  useEffect(() => {
+    async function LoadingState() {
+      try {
+        setLoading(true);
+      } catch (error) {
+        setLoading(false);
+        console.log("error");
+      } finally {
+        setTimeout(() => {
+          setLoading(false);
+        }, 2000);
+      }
+    }
+    LoadingState();
   }, []);
 
-  useEffect(() => {
-    const filterProd = data.filter(prod => prod.categoria === id)
-    if (filterProd.length > 0) return setProducts(filterProd)
-    setProducts(data)
-  }, [id])
-
-  return (
-    <ItemList data={products} />
-  )
-}
-
+  if (loading) {
+    return (
+      <div className="spinnerDiv">
+        <Spinner animation="border" variant="primary" id="spinner" />
+      </div>
+    );
+  } else {
+    return (
+      <div className="ItemListContainer">
+        <ItemList data={data} />
+      </div>
+    );
+  }
+};
 
 export default ItemListContainer;

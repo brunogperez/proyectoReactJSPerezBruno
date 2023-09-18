@@ -1,0 +1,17 @@
+.ItemListContainer{
+    background-color: #7f99b2;
+    padding: 1vh;
+    min-height: 90vh;
+
+}
+
+.spinnerDiv{
+    background-color: #7f99b2;
+    min-width: 90vh;
+    min-height: 70.5vh;
+}
+
+#spinner{
+    margin: 15.5% 48%;
+    scale: 1.7;
+}

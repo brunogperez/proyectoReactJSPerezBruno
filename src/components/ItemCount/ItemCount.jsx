@@ -1,23 +1,30 @@
 import { useState } from 'react'
 import Button from 'react-bootstrap/Button'
+import './ItemCount.css'
 
-const ItemCount = () => {
-    const [counter, setCounter] = useState(1)
+const ItemCount = ({ initial, stock, onAdd }) => {
+
+    const [count, setCount] = useState(parseInt(initial))
 
     const addUnidad = () => {
-        setCounter(counter + 1)
+        setCount(count + 1)
     }
 
     const resUnidad = () => {
-        (counter > 1) && setCounter(counter - 1)
+        setCount(count - 1)
     }
 
     return (
-        <>
-            <Button onClick={resUnidad} variant="danger" > - </Button>
-            <span >  {counter}  </span>
-            <Button onClick={addUnidad} variant="success" > + </Button>
-        </>
+        <div>
+            <div className='counter'>
+                <Button disabled={count <= 1} onClick={resUnidad} variant="danger" > - </Button>
+                <span >  {count}  </span>
+                <Button disabled={count >= stock} onClick={addUnidad} variant="success" > + </Button>
+            </div>
+            <div className='btnCounter'>
+                <Button disabled={stock <= 0} onClick={() => onAdd(count)} id="btnDetail">Add to cart</Button>
+            </div>
+        </div>
     )
 }
 

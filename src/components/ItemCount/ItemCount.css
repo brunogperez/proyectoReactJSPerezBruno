@@ -1,0 +1,14 @@
+.counter{
+  background-color: #D4E157;
+  width: max-content;
+  padding: 1vh;
+  border-radius: 10%;
+  border: none;
+  margin: 1vh auto;
+}
+
+.btnCounter{
+  border: none;
+  margin: 1vh auto;
+  width: max-content;
+}

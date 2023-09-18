@@ -1,0 +1,36 @@
+
+
+#imgDetail {
+  height: 37vh;
+  width: 100vw;
+  object-fit: contain;
+}
+
+.cardBody {
+  align-items: center;
+  place-items: center;
+}
+
+.textCard {
+  font-size: 4vh;
+  color: antiquewhite;
+}
+
+#cardDetail {
+  margin: 5.2vh auto;
+  padding: 1em;
+  width: 100%;
+  background-color: #2d2b36;
+}
+.cardText {
+  color: antiquewhite;
+}
+#btnDetail{
+    background-color: #D4E157;
+    color: black;
+    border: none;
+}
+.textHome{
+  text-decoration: none;
+  color: antiquewhite;
+}

@@ -1,0 +1,21 @@
+.cartItem{
+  min-height: 100vh;
+}
+.inCartItem{
+    margin: 1vh auto;
+    width: 50%;
+    border: 3px solid #ffc107;
+    display: flex;
+    flex-direction: row;
+  }
+    .inCartItem_container{
+        display: flex;
+        width: 100%;
+      }
+        .inCartItem_container_text{
+            margin: auto;
+        }
+    
+    .inCartItemImgContainer{
+        width: 300px;
+    }
