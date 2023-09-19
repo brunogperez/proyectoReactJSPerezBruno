@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# **ByC Ingeniería**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+E-Commmerce de alquiler de maquinaria y herramientas para obras.
 
-## Available Scripts
+# Instrucciones para usar la aplicación localmente:
 
-In the project directory, you can run:
+1. Descargar las dependencias desde el directorio raiz con:
+   ### `npm install`
+2. Correr la aplicación localmente en: [localhost:3000](http://localhost:3000) con:
+   ### `npm start`
+3. Para hacer un build de deployment (produccíon) usar:
+   ### `npm build`
 
-### `npm start`
+# Dependencias:
+La aplicación utiliza las siguientes dependencias:
+- React-Bootstrap (Framework de estilos)
+- Bootstrap (por uso de clases)
+- Bootstrap-icons (uso de iconos)
+- React-icons (idem item superior)
+- Firebase (uso de base de datos)
+- SweetAlerts2 (libreria de JavaScript para mostrar alertas)
+- React-router-dom (para navegación)
+- React-router-hash-link (navegación entre hashs internos de la aplicación)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## **Preentregas** 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Versión 1 (Preentrega 1)
 
-### `npm test`
+En una primera instancia procedí a la creación del proyecto por medio del comando `create-react-app`.
+Finalizado el proceso de creación y cofiguración del mismo, realice un primer commit para dejar asentado la creación del proyecto.
+Posteriormente realice la creación de los primeros componente del proyecto.
+1. Un componente Navbar obtenido de la librería de boostrap.
+2. Los componentes ItemListContainer y ItemList para practicar el paso de props entre componentes.
+3. Y por último el componente CartWidget con el ícono del carrito.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Luego agregué Un logo y realicé la edición de algunos estilos de los componentes.
 
-### `npm run build`
+Posteriormente hice la primer preentrega del proyecto con lo realizado hasta el momento.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Versión 1.5 (Correciones de la prentrega 1)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Se realizaron algunas correciones en el componente ItemListContainer.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Versión 2 (Preentrega 2)
 
-### `npm run eject`
+Para la preentrega 2 Se incorporó el uso del router-dom 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+En el componente Navbar se creo un dropdown con todas las categorías de los productos del E-Commerce, las cuales fueron linkeadas para ser utilizadas como rutas para el posterior renderizado de los productos por categoría.
+En los componentes ItemList e ItemListContainer se realizó toda la lógica para el renderizado de los mismos, a partir de la creación de estados con el useState y con efectos del useEffect.
+Los productos fueron traidos de una base de datos localizada en un archivo .JSON 
+Se creó  un componente Item para el renderizado de las cards de cada producto en el catálogo.
+Además se crearon dos componentes ItemDetailContainer e ItemDetail para el renderizado del detalle de cada producto.
+Y por último un componente ItemCount para el renderizado de un contador para agregar o quitar cantidades de los productos en el carrito
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Versión 3 (Preentrega 3)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+En esta preentrega agregamos el uso del componente CartContext para el cart y firebase para traer los productos desde una base de datos. Se sincronizaron todos los componentes para el funcionamiento correcto de la aplicación.
+Se crearon los componentes CartView y CartItem con su respectiva lógica para el renderizado de los productos en el carrito de compras. 
+Finalmente se procedió a la creación de los componentes Order y OrderItem con su lógica para realizar el checkout del pedido del cliente, con la posterior subida de los datos a la base de datos en firebase.
