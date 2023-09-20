@@ -9,6 +9,7 @@ import { useCartContext } from "../CartContext/CartContext.jsx";
 import { Link } from "react-router-dom";
 
 
+
 export const ItemDetail = ({ info }) => {
 
   const { addProduct } = useCartContext();

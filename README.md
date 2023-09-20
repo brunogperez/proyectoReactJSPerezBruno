@@ -21,6 +21,7 @@ La aplicación utiliza las siguientes dependencias:
 - SweetAlerts2 (libreria de JavaScript para mostrar alertas)
 - React-router-dom (para navegación)
 - React-router-hash-link (navegación entre hashs internos de la aplicación)
+- Toastify (libreria para mostrar notificaciones en pantalla)
 
 ## **Preentregas** 
 
@@ -52,8 +53,12 @@ Se creó  un componente Item para el renderizado de las cards de cada producto e
 Además se crearon dos componentes ItemDetailContainer e ItemDetail para el renderizado del detalle de cada producto.
 Y por último un componente ItemCount para el renderizado de un contador para agregar o quitar cantidades de los productos en el carrito
 
-# Versión 3 (Preentrega 3)
+# Versión 3 
 
 En esta preentrega agregamos el uso del componente CartContext para el cart y firebase para traer los productos desde una base de datos. Se sincronizaron todos los componentes para el funcionamiento correcto de la aplicación.
 Se crearon los componentes CartView y CartItem con su respectiva lógica para el renderizado de los productos en el carrito de compras. 
 Finalmente se procedió a la creación de los componentes Order y OrderItem con su lógica para realizar el checkout del pedido del cliente, con la posterior subida de los datos a la base de datos en firebase.
+ 
+ # Versión 3.5 (Proyecto Final)
+
+ Se agregó una notificación con la librería Toastify al pulsar el botón de agregar al carrito.
